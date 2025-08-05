@@ -22,30 +22,30 @@
 </head>
 <body>
 <div class="form-data">
-    <form method="post">
+    <form:form method="post" action="/admin/user/create" modelAttribute="newUser" >
         <div class="mb-3">
             <label for="emailData" class="form-label">Email</label>
-            <input type="email" class="form-control" id="emailData" aria-describedby="emailHelp">
+            <form:input type="email" class="form-control" id="emailData" aria-describedby="emailHelp" path="email" />
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
             <label for="passwordData" class="form-label">Password</label>
-            <input type="password" class="form-control" id="passwordData">
+            <form:input type="password" class="form-control" id="passwordData" path="password" />
         </div>
         <div class="mb-3">
             <label for="nameData" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="nameData">
+            <form:input type="text" class="form-control" id="nameData" path="fullName" />
         </div>
         <div class="mb-3">
             <label for="addressData" class="form-label">Address</label>
-            <input type="text" class="form-control" id="addressData">
+            <form:input type="text" class="form-control" id="addressData" path="address" />
         </div>
         <div class="mb-3">
             <label for="phoneData" class="form-label">Phone</label>
-            <input type="text" class="form-control" id="phoneData">
+            <form:input type="text" class="form-control" id="phoneData" path="phone" />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </form:form>
 </div>
 </body>
 </html>
