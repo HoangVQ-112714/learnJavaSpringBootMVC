@@ -36,20 +36,13 @@
             </tr>
             </thead>
             <tbody>
-
-            <c:forEach var="user" items="${allUser}">
-                <tr>
-                    <td>${user.id}</td>
-                    <td>${user.email}</td>
-                    <td>${user.fullName}</td>
-                    <td>${user.phone}</td>
-                    <td>${user.address}</td>
-                    <td><a href="/admin/user/${user.id}">Detail</a></td>
-                    <td><a>Update</a></td>
-                    <td><a>Delete</a></td>
-                </tr>
-            </c:forEach>
-
+            <tr>
+                <td>${userDetail.id}</td>
+                <td>${userDetail.email}</td>
+                <td>${userDetail.fullName}</td>
+                <td>${userDetail.phone}</td>
+                <td>${userDetail.address}</td>
+            </tr>
             </tbody>
         </table>
     </div>

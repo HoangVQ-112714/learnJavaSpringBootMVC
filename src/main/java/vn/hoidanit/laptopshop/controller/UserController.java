@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import vn.hoidanit.laptopshop.domain.User;
@@ -35,6 +36,13 @@ public class UserController {
         List<User> arrUser = this.userService.getAllUsers();
         model.addAttribute("allUser", arrUser);
         return "admin/user/list";
+    }
+
+    @RequestMapping(value = "/admin/user/{id}", method = RequestMethod.GET)
+    public String getUserById(Model model, @PathVariable Long id) {
+        User userDetail = this.userService.getUserById(id);
+        model.addAttribute("userDetail", userDetail);
+        return "admin/user/detail";
     }
 
     @RequestMapping(value = "/admin/user/create", method = RequestMethod.GET)
