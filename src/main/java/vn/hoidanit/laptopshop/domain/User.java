@@ -1,14 +1,21 @@
 package vn.hoidanit.laptopshop.domain;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="users")
 public class User {
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
+
     private String email;
     private String password;
     private String fullName;
     private String address;
     private String phone;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -32,7 +39,7 @@ public class User {
         return phone;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
